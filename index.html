@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!-- Copy of watchland-site/public/promo.html (watchland2025 repo) for GitHub Pages; keep the two in step. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Folkplay – Free promo codes</title>
+  <meta name="description" content="Get Folkplay free on Google Play: 160+ classic and folk games — Durak, Pogs, marbles, a retro brick game and more. Offline, no ads.">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Link preview when a coupon link is shared (the page itself stays out of search). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Folkplay">
+  <meta property="og:url" content="https://mcs2k8.github.io/folkplay-promo/">
+  <meta property="og:title" content="Get Folkplay free — claim a promo code">
+  <meta property="og:description" content="Get Folkplay free on Google Play: 160+ classic and folk games — Durak, Pogs, marbles, a retro brick game and more. Offline, no ads.">
+  <meta property="og:image" content="https://mcs2k8.github.io/folkplay-promo/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Folkplay games: Durak, Pogs, Marbles, Ddakji and more">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get Folkplay free — claim a promo code">
+  <meta name="twitter:description" content="Get Folkplay free on Google Play: 160+ classic and folk games — Durak, Pogs, marbles, a retro brick game and more. Offline, no ads.">
+  <meta name="twitter:image" content="https://mcs2k8.github.io/folkplay-promo/og.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0e1a;
+      --surface: #111827;
+      --surface2: #1c2436;
+      --border: rgba(255,255,255,0.08);
+      --accent: #6c63ff;
+      --accent2: #a78bfa;
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+    }
+
+    /* ── Background decoration ── */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .bg-glow::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(108,99,255,0.18) 0%, transparent 70%);
+    }
+    .bg-glow::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: 20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(167,139,250,0.10) 0%, transparent 70%);
+    }
+
+    /* ── Layout ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
+    }
+
+    /* ── Brand header ── */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      text-decoration: none;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    .brand-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── Card ── */
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    /* ── Optional header image: edge to edge at the top of the card, never cropped ── */
+    .card-hero {
+      margin: -32px -28px 24px;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .card-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+    /* Narrow phones: a little less padding; the header image follows it (must come after the rules above). */
+    @media (max-width: 400px) {
+      .card { padding: 28px 20px; }
+      .card-hero { margin: -28px -20px 24px; }
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.3);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent2);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .card-badge svg { width: 14px; height: 14px; }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.5rem, 5vw, 1.875rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .card-title span { color: var(--accent2); }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* ── Play Store button ── */
+    .btn-play {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: background 0.15s, transform 0.1s;
+      margin-bottom: 12px;
+    }
+    .btn-play:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-play:active { transform: none; }
+    .btn-play-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-play-icon svg { width: 20px; height: 20px; fill: white; }
+    .btn-play-text { display: flex; flex-direction: column; }
+    .btn-play-text small { font-size: 0.6875rem; font-weight: 400; opacity: 0.8; }
+    .btn-play-text strong { font-size: 1rem; font-weight: 700; }
+
+    /* ── Divider ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.8125rem;
+      margin: 4px 0 12px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Claim button ── */
+    .btn-claim {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+      box-shadow: 0 4px 24px rgba(108,99,255,0.35);
+    }
+    .btn-claim:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+    .btn-claim:active:not(:disabled) { transform: none; }
+    .btn-claim:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-claim svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* ── Spinner ── */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner {
+      width: 20px; height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    /* ── Coupon result ── */
+    .coupon-box {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .coupon-box.visible { display: flex; }
+
+    .coupon-label {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .coupon-code-row {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+    }
+
+    .coupon-code {
+      flex: 1;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1rem, 4vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent2);
+      word-break: break-all;
+    }
+
+    .btn-copy {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-copy:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-copy svg { width: 18px; height: 18px; }
+    .btn-copy.copied { background: var(--green); border-color: var(--green); color: #fff; }
+
+
+    /* ── Redeem button + guide (shown with the code) ── */
+    .btn-redeem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-redeem:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-redeem svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .guide-lead, .guide-more { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .guide-more a { color: var(--accent2); text-underline-offset: 3px; }
+    .step strong { color: var(--text); font-weight: 600; }
+
+    /* ── Error / info states ── */
+    .state-msg {
+      display: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    .state-msg.visible { display: block; }
+    .state-msg.error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+    .state-msg.info { background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.25); color: var(--accent2); }
+
+    /* ── Loading skeleton ── */
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+    .skeleton {
+      background: linear-gradient(90deg, var(--surface2) 25%, var(--surface) 50%, var(--surface2) 75%);
+      background-size: 800px 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+    .skel-title { height: 2rem; width: 80%; margin-bottom: 10px; }
+    .skel-desc { height: 1rem; width: 95%; margin-bottom: 6px; }
+    .skel-desc2 { height: 1rem; width: 65%; }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+    footer a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── Steps hint ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 20px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .step-num {
+      background: rgba(108,99,255,0.15);
+      color: var(--accent2);
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <div class="page">
+    <a href="https://play.google.com/store/apps/details?id=com.mcs2k8.folkplay" class="brand" id="brand" target="_blank" rel="noopener noreferrer" aria-label="Folkplay on Google Play">
+      <img src="icon.png" alt="Folkplay icon" id="brand-icon">
+      <span class="brand-name" id="brand-name">Folkplay</span>
+    </a>
+
+    <div class="card">
+      <!-- Optional header image (set per pool in the admin) -->
+      <div class="card-hero" id="pool-hero" hidden>
+        <img id="pool-hero-img" alt="">
+      </div>
+
+      <div class="card-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Exclusive Offer
+      </div>
+
+      <!-- Skeleton shown while loading pool info -->
+      <div id="skel-content">
+        <div class="skeleton skel-title"></div>
+        <div style="height:8px"></div>
+        <div class="skeleton skel-desc"></div>
+        <div class="skeleton skel-desc2"></div>
+        <div style="height:28px"></div>
+      </div>
+
+      <!-- Real content injected after load -->
+      <div id="pool-content" style="display:none">
+        <h1 class="card-title" id="pool-name">Get your<br><span>free coupon</span></h1>
+        <p class="card-desc" id="pool-desc">Claim your exclusive Folkplay coupon code below.</p>
+      </div>
+
+      <!-- Pool not found -->
+      <div id="pool-error" style="display:none">
+        <h1 class="card-title">Coupon<br><span>not found</span></h1>
+        <p class="card-desc">This link may be expired or invalid. Check with whoever shared it with you.</p>
+      </div>
+
+      <!-- Play Store -->
+      <a
+        id="play-btn"
+        href="https://play.google.com/store/apps/details?id=co.bailong.watchland"
+        class="btn-play"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="btn-play-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.18 23.78C2.46 23.39 2 22.64 2 21.8V2.2C2 1.36 2.46.61 3.18.22L13.27 11.97 3.18 23.78zm1.04-22.44L16.83 12 4.22 22.66V1.34zM18.01 8.5L5.67 1.4l10.34 10.55-8.71 8.87 10.71-5.82c1.03-.56 1.99-2.67.53-5.2-.38-.64-.84-1.14-1.33-1.3z"/></svg>
+        </span>
+        <span class="btn-play-text">
+          <small>GET IT ON</small>
+          <strong>Google Play</strong>
+        </span>
+      </a>
+
+      <div class="divider">then</div>
+
+      <!-- Claim button area -->
+      <div id="claim-area">
+        <button class="btn-claim" id="claim-btn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12M6 12h.01M18 12h.01"/></svg>
+          Claim My Free Coupon
+        </button>
+
+        <!-- Error / info messages -->
+        <div class="state-msg error" id="claim-error"></div>
+        <div class="state-msg info" id="claim-info"></div>
+
+        <!-- Coupon result -->
+        <div class="coupon-box" id="coupon-result">
+          <p class="coupon-label">Your coupon code</p>
+          <div class="coupon-code-row">
+            <div class="coupon-code" id="coupon-code-text"></div>
+            <button class="btn-copy" id="copy-btn" title="Copy to clipboard" aria-label="Copy coupon code">
+              <svg id="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+              </svg>
+            </button>
+          </div>
+          <a class="btn-redeem" id="redeem-btn" href="https://play.google.com/redeem" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8"/><path d="M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+            Redeem in Google Play
+          </a>
+        </div>
+      </div>
+
+      <!-- Steps hint -->
+      <!-- How to redeem — shown with the code (Google Play Help: support.google.com/googleplay/answer/3422659) -->
+      <div class="steps" id="steps-hint" style="display:none">
+        <p class="guide-title">How to redeem your code</p>
+        <p class="guide-lead">First install <strong class="app-name">Folkplay</strong> with the Google Play button above. Then, on your Android device:</p>
+        <div class="step"><span class="step-num">1</span><span>Open the <strong>Google Play Store</strong> app.</span></div>
+        <div class="step"><span class="step-num">2</span><span>Tap your <strong>profile icon</strong> at the top right.</span></div>
+        <div class="step"><span class="step-num">3</span><span>Select <strong>Payments &amp; subscriptions</strong>, then tap <strong>Redeem code</strong>.</span></div>
+        <div class="step"><span class="step-num">4</span><span>Type or paste your code and tap <strong>Redeem</strong>.</span></div>
+        <div class="step"><span class="step-num">5</span><span id="step-5">You can also redeem it in <strong>Watchland</strong> itself: tap your profile → <strong>Redeem Code</strong>.</span></div>
+        <p class="guide-more">
+          On a computer? Go to <a href="https://play.google.com/redeem" target="_blank" rel="noopener noreferrer">play.google.com/redeem</a>.
+          Codes expire per Google Play terms. More help: <a href="https://support.google.com/googleplay/answer/3422659" target="_blank" rel="noopener noreferrer">Google Play Help</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://bailong.fyi/folkplay/">Folkplay</a> &middot;
+    <a href="https://watchland.ca/folkplay/pp.html">Privacy Policy</a>
+  </footer>
+
+  <!-- Firebase JS SDK (compat for simpler inline usage) -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js';
+    import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js';
+    import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-functions.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3XYXolepqxvES72UeLb0yE6oPDM468iI",
+      authDomain: "watchland2024.firebaseapp.com",
+      databaseURL: "https://watchland2024-default-rtdb.firebaseio.com",
+      projectId: "watchland2024",
+      storageBucket: "watchland2024.appspot.com",
+      messagingSenderId: "788845333012",
+      appId: "1:788845333012:web:858d4414157732743cf501",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const fns = getFunctions(app, 'us-central1');
+
+    // GitHub Pages has no URL rewrites: the pool comes from ?pool=<id>, defaulting to the Folkplay giveaway.
+    const FOLKPLAY_POOL = '573ddbad-b47a-495d-9374-106bb2b16809';
+    const poolId = new URLSearchParams(location.search).get('pool') || FOLKPLAY_POOL;
+
+    const skelEl    = document.getElementById('skel-content');
+    const poolEl    = document.getElementById('pool-content');
+    const poolErrEl = document.getElementById('pool-error');
+    const claimBtn  = document.getElementById('claim-btn');
+    const claimErr  = document.getElementById('claim-error');
+    const claimInfo = document.getElementById('claim-info');
+    const couponBox = document.getElementById('coupon-result');
+    const codeEl    = document.getElementById('coupon-code-text');
+    const copyBtn   = document.getElementById('copy-btn');
+    const stepsEl   = document.getElementById('steps-hint');
+
+    function showError(msg) {
+      claimErr.textContent = msg;
+      claimErr.classList.add('visible');
+      claimInfo.classList.remove('visible');
+    }
+    function showInfo(msg) {
+      claimInfo.textContent = msg;
+      claimInfo.classList.add('visible');
+      claimErr.classList.remove('visible');
+    }
+    function hideMessages() {
+      claimErr.classList.remove('visible');
+      claimInfo.classList.remove('visible');
+    }
+
+    function showCoupon(code) {
+      codeEl.textContent = code;
+      // Opens Google Play's redeem screen with the code filled in (a plain redeem page if not).
+      document.getElementById('redeem-btn').href = `https://play.google.com/redeem?code=${encodeURIComponent(code)}`;
+      couponBox.classList.add('visible');
+      claimBtn.style.display = 'none';
+      stepsEl.style.display = '';
+      hideMessages();
+      localStorage.setItem(`wl_coupon_${poolId}`, code);
+    }
+
+    // Check if user already claimed a coupon from this pool
+    const cached = poolId ? localStorage.getItem(`wl_coupon_${poolId}`) : null;
+
+    async function loadPool() {
+      if (!poolId || !/^[a-zA-Z0-9_-]+$/.test(poolId)) {
+        skelEl.style.display = 'none';
+        poolErrEl.style.display = '';
+        return;
+      }
+
+      try {
+        const snap = await get(ref(db, `coupon_pools/${poolId}`));
+        skelEl.style.display = 'none';
+
+        if (!snap.exists()) {
+          poolErrEl.style.display = '';
+          return;
+        }
+
+        const pool = snap.val();
+        const app = applyApp(pool); // the app's name, or '' when the admin left it unnamed
+        applyHeader(pool);
+        document.getElementById('pool-name').innerHTML =
+          `Get your<br><span>${escapeHtml(pool.name || 'free coupon')}</span>`;
+        document.getElementById('pool-desc').textContent =
+          pool.description || `Claim your exclusive ${app ? `${app} ` : ''}coupon code below.`;
+        document.title = `${app || 'Coupon'} – ${pool.name || 'Claim Your Coupon'}`;
+        poolEl.style.display = '';
+
+        if (cached) {
+          showCoupon(cached);
+          showInfo('You already claimed a coupon from this campaign — here it is again!');
+        } else if (pool.active) {
+          claimBtn.disabled = false;
+        } else {
+          claimBtn.disabled = true;
+          showInfo('This coupon campaign is currently paused. Check back later!');
+        }
+      } catch (e) {
+        skelEl.style.display = 'none';
+        poolErrEl.style.display = '';
+      } finally {
+        // Tag the store link once it is final (play-referrer.js runs in manual mode here).
+        window.WatchlandPlayReferrer?.apply();
+      }
+    }
+
+    // A pool can be for another app or game: point the page at its Play listing and name.
+    // Returns the app's display name ('' if unnamed). Values come from the admin; still checked before use.
+    const PLAY_LINK = /^https:\/\/play\.google\.com\/store\/apps\/details\?id=[A-Za-z][\w.]*$/;
+    function applyApp(pool) {
+      if (typeof pool.playUrl !== 'string' || !PLAY_LINK.test(pool.playUrl)) return 'Watchland';
+      const name = (typeof pool.appName === 'string' && pool.appName.trim()) || '';
+      const shown = name || 'the app';
+      document.getElementById('play-btn').href = pool.playUrl;
+
+      const brand = document.getElementById('brand');
+      brand.href = pool.playUrl;
+      brand.target = '_blank';
+      brand.rel = 'noopener noreferrer';
+      brand.setAttribute('aria-label', `${name || 'The app'} on Google Play`);
+      const icon = document.getElementById('brand-icon');
+      if (typeof pool.appIcon === 'string' && /^https:\/\/[a-z0-9.-]+\.googleusercontent\.com\//i.test(pool.appIcon)) {
+        icon.src = pool.appIcon;
+        icon.alt = `${name || 'App'} icon`;
+      } else {
+        icon.remove();
+      }
+      document.getElementById('brand-name').textContent = name || 'Get the app on Google Play';
+
+      // The redeem guide names this app; its in-app option is the generic "apply a promo code at checkout".
+      document.querySelectorAll('.app-name').forEach((el) => { el.textContent = shown; });
+      document.getElementById('step-5').innerHTML =
+        `You can also redeem it at checkout inside <strong>${escapeHtml(shown)}</strong>, by choosing the option to apply a promo code.`;
+      return name;
+    }
+
+    function applyHeader(pool) {
+      const h = pool.headerImage;
+      if (!h || typeof h.url !== 'string' || !h.url.startsWith('https://storage.googleapis.com/')) return;
+      const img = document.getElementById('pool-hero-img');
+      if (h.width > 0 && h.height > 0) {
+        // Reserve the space before it loads, so nothing jumps.
+        img.width = h.width;
+        img.height = h.height;
+      }
+      img.alt = pool.name || '';
+      img.src = h.url;
+      document.getElementById('pool-hero').hidden = false;
+    }
+
+    claimBtn.addEventListener('click', async () => {
+      claimBtn.disabled = true;
+      claimBtn.innerHTML = '<span class="spinner"></span> Claiming…';
+      hideMessages();
+
+      try {
+        const claimCoupon = httpsCallable(fns, 'claimCoupon');
+        const result = await claimCoupon({ poolId });
+        showCoupon(result.data.code);
+      } catch (e) {
+        const msg = e?.message || 'Something went wrong. Please try again.';
+        showError(msg.replace(/^.*?: /, ''));
+        claimBtn.disabled = false;
+        claimBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12M6 12h.01M18 12h.01"/></svg>
+          Try Again
+        `;
+      }
+    });
+
+    copyBtn.addEventListener('click', () => {
+      const code = codeEl.textContent || '';
+      navigator.clipboard.writeText(code).then(() => {
+        copyBtn.classList.add('copied');
+        copyBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;
+        }, 2000);
+      });
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    loadPool();
+  </script>
+  <script src="play-referrer.js" data-source="mcs2k8.github.io" data-medium="site" data-campaign="promo" data-manual></script>
+</body>
+</html>
